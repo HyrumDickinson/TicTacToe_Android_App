@@ -9,14 +9,16 @@ public class Position {
     }
 
     public void setBoard(int[] input) { 
-        assert (input.length == 9) : "board array must contain 9 elements";
+        if (input.length != 9) {
+            throw new IllegalArgumentException("Board must contain 9 squares");
+        }
         board = input;
     }
     public int[] getBoard() {
         return board;
     }
 
-    private int turn() { // returns the player who is to move in the current position
+    public int turn() { // returns the player who is to move in the current position
         int index = 0;
         for (int space : this.board) {
             index += space;
@@ -28,7 +30,7 @@ public class Position {
         }
     }
     
-    private int evaluation() {
+    public int evaluation() {
         return Intelligence.evaluation(this.board);
     }
 }
