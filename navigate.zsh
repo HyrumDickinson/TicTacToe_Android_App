@@ -1,1 +1,2 @@
-cd src/main/java/tictactoe
+cd src/main/java/tictactoe/
+ls
