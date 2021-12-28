@@ -27,8 +27,8 @@ public class Position {
             return -1;
         }
     }
+    
     private int evaluation() {
         return Intelligence.evaluation(this.board);
     }
-
 }
