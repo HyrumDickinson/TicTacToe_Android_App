@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 // this is the class for a single game
@@ -16,10 +17,10 @@ public class Game extends Position {
         // list would be easiest
     public List<Integer> changeLog = new ArrayList<>(); // begins empty
     // int of how many times a player's undone a move
-    public int takebackX = 0; // x goes first
-    public int takebackO = 0;
-    public String playernameX; // until initialized, is empty ""
-    public String playername0;
+    public int takeBackX = 0; // x goes first
+    public int takeBackO = 0;
+    public String playerNameX; // until initialized, is empty ""
+    public String playerName0;
     
     Game(int[] setboard) {
         super(setboard); // new Game instance should have all data from Position and state above
@@ -46,6 +47,22 @@ public class Game extends Position {
         return true;
     }
 
+    public void setPlayerNameX() {
+        try (Scanner playerNameScannerX = new Scanner(System.in)) {
+            System.out.println("Player 1 enter name");
 
+            String playerNameX = playerNameScannerX.nextLine();  // Read user input
+            System.out.println(playerNameX + " will place the X's");  // Output user input
+        }
+    }
+
+    public void setPlayerNameY() {
+        try (Scanner playerNameScannerO = new Scanner(System.in)) {
+            System.out.println("Player 2 enter name");
+
+            String playerNameO = playerNameScannerO.nextLine();  // Read user input
+            System.out.println(playerNameO + " will place the O's");  // Output user input
+        }
+    }
 
 }
