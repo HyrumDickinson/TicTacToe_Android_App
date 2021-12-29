@@ -1,13 +1,21 @@
+// this class represents a snapshot of the position on the board
+
 public class Position {
 
-    // class state
-    public int[] board = new int[9];
+    // STATE
+    private int[] board = new int[9];
 
-    // setter
+    // CONSTRUCTORS
+    Position() {
+        for (int locations : board) {
+            board[locations] = 0;
+        }
+    }
     Position(int[] setBoard) {
         board = setBoard;
     }
 
+    // SETTERS AND GETTERS
     public void setBoard(int[] input) { 
         if (input.length != 9) {
             throw new IllegalArgumentException("Board must contain 9 squares");
@@ -18,6 +26,7 @@ public class Position {
         return board;
     }
 
+    // METHODS
     public int turn() { // returns the player who is to move in the current position
         int index = 0;
         for (int space : this.board) {
