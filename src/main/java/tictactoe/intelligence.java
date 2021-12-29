@@ -1,5 +1,8 @@
-public class Intelligence {
+// this class provides analysis
 
+public class Intelligence { // everything in here should be static
+
+    // STATIC METHODS
     // evaluation helper functions
     public static int checkWin(int[] board) {
         assert (board.length == 9) : "board length must equal 9";
@@ -20,20 +23,21 @@ public class Intelligence {
         }
         return 0;
     }
-    public static int checkTie(int[] board) {
-        if (board[0] != 0 &&
-            board[1] != 0 &&
-            board[2] != 0 &&
-            board[3] != 0 &&
-            board[4] != 0 &&
-            board[5] != 0 &&
-            board[6] != 0 &&
-            board[7] != 0 &&
-            board[8] != 0) {
-            return 0;
-        }
-        return -2; // dummy number for if this check fails
-    }
+    // public static int checkTie(int[] board) {
+    //     if (board[0] != 0 &&
+    //         board[1] != 0 &&
+    //         board[2] != 0 &&
+    //         board[3] != 0 &&
+    //         board[4] != 0 &&
+    //         board[5] != 0 &&
+    //         board[6] != 0 &&
+    //         board[7] != 0 &&
+    //         board[8] != 0 &&
+    //         checkWin(board) == 0) {
+    //         return 0;
+    //     }
+    //     return -2; // dummy number for if this check fails
+    // }
 
     // function that evaluates a position
     public static int evaluation(int[] board) {
