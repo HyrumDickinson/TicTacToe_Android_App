@@ -2,7 +2,7 @@
 // prompts allowing the user to choose game modes, action flow, etc.
 // this will function as a script that directs the functionality of the other files
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
@@ -12,9 +12,11 @@ class Main {
         Game newGame = new Game();
         
         // player setup
-        newGame.scanPlayerName(true);
-        newGame.scanPlayerName(false);
-        System.out.println(newGame.getPlayerName(true) + " vs " + newGame.getPlayerName(false));
+        // newGame.scanPlayerName(true);
+        // newGame.scanPlayerName(false);
+        // System.out.println(newGame.getPlayerName(true) + " vs " + newGame.getPlayerName(false));
+
+        newGame.setPlayerName(true) = player_1;
 
         // gameplay
         while (newGame.getChangeLog().size() < 9 && Intelligence.checkWin(newGame.getBoard()) == 0) {

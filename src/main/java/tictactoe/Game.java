@@ -83,17 +83,21 @@ public class Game extends Position {
     }
 
     public void scanPlayerName(boolean isPlayerX) {
-        try (Scanner playerNameScanner = new Scanner(System.in)) {
+        Scanner scanner = new Scanner(System.in);
             if (isPlayerX) {
                 System.out.println("Player 1 enter name"); // Tell user what to input
-                playerName[0] = playerNameScanner.nextLine();  // Read user input
+                if (scanner.hasNextLine()) {
+                    playerName[0] = scanner.nextLine();  // Read user input
+                }
                 System.out.println(playerName[0] + " will place the X's");  // Display user input
             } else {
                 System.out.println("Player 2 enter name");
-                playerName[1] = playerNameScanner.nextLine();
+                if (scanner.hasNextLine()) {
+                    playerName[1] = scanner.nextLine();  // Read user input
+                }
                 System.out.println(playerName[1] + " will place the O's");
             }
-        }
+        scanner.close();
     }
 
     public void playRandom() {
